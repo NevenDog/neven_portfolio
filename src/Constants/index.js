@@ -76,19 +76,19 @@ export const myProjects = [
         image: [
             {
                 id:1,
-                path:"public/assets/IsoRoom/Room_Render_Test.png",
+                path:"/assets/IsoRoom/Room_Render_Test.png",
             },
             {
                 id:2,
-                path:"public/assets/IsoRoom/Room_Render_Test_1.png",
+                path:"/assets/IsoRoom/Room_Render_Test_1.png",
             },
             {
                 id:3,
-                path:"public/assets/IsoRoom/Room_Render_Test_2.png",
+                path:"/assets/IsoRoom/Room_Render_Test_2.png",
             },
             {
                 id:4,
-                path:"public/assets/IsoRoom/Room_Render_Test_3.png",
+                path:"/assets/IsoRoom/Room_Render_Test_3.png",
             },
         ],
     },
@@ -126,7 +126,7 @@ export const myProjects = [
         image: [
             {
                 id: 1,
-                path:"public/assets/Portfolio/Portfolio_1.png"
+                path:"/assets/Portfolio/Portfolio_1.png"
             }
         ],
     },
@@ -156,19 +156,19 @@ export const myProjects = [
         image:[
             {
                 id:1,
-                path:"public/assets/Grog/0001.png",
+                path:"/assets/Grog/0001.png",
             },
             {
                 id:2,
-                path:"public/assets/Grog/0024.png",
+                path:"/assets/Grog/0024.png",
             },
             {
                 id:3,
-                path:"public/assets/Grog/0059.png",
+                path:"/assets/Grog/0059.png",
             },
             {
                 id:4,
-                path:"public/assets/Grog/0087.png",
+                path:"/assets/Grog/0087.png",
             },
         ]
     },

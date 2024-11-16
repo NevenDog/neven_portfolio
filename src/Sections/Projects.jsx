@@ -85,7 +85,7 @@ const Projects = () => {
                 </div>
 
                 <div className="relative lg:col-span-2 border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-                    <img className="absolute object-contain h-full w-full" src={currentImage ? currentImage.path : "public/assets/Failsafe.jpg"} alt={currentProject.title}/>
+                    <img className="absolute object-contain h-full w-full" src={currentImage ? currentImage.path : "/assets/Failsafe.jpg"} alt={currentProject.title}/>
 
                     <div className="absolute w-full flex justify-between items-center bottom-0 p-4">
                         <button className="arrow-btn" onClick={() => handleImageNav("previous")}>
