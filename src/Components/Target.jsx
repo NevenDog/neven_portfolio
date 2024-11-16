@@ -7,7 +7,7 @@ import {random} from "gsap/gsap-core";
 
 const Target = (props) => {
     const targetRef = useRef();
-    const model = useGLTF("/Models/Gondola.glb");
+    const model = useGLTF("./Models/Gondola.glb");
     const scene = useMemo(() => {
         return model.scene.clone()
     }, [model]);

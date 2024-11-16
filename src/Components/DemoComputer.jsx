@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const DemoComputer = (props) => {
-    const { nodes, materials } = useGLTF("/Models/Gondola.glb")
+    const { nodes, materials } = useGLTF("./Models/Gondola.glb")
     return (
         <group {...props} dispose={null}>
             <mesh
@@ -19,6 +19,6 @@ const DemoComputer = (props) => {
     )
 }
 
-useGLTF.preload("/Models/Gondola.glb")
+useGLTF.preload("./Models/Gondola.glb")
 
 export default DemoComputer;
