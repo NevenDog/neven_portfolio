@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from 'gsap'
 
 const Medal = (props) => {
-    const { nodes, materials } = useGLTF("src/Models/Medal.glb")
+    const { nodes, materials } = useGLTF("public/Models/Medal.glb")
     const groupRef = useRef()
 
     function spin(){
@@ -37,6 +37,6 @@ const Medal = (props) => {
     )
 }
 
-useGLTF.preload("src/Models/Medal.glb")
+useGLTF.preload("public/Models/Medal.glb")
 
 export default Medal;

@@ -3,9 +3,9 @@ import {useAnimations, useFBX ,useGLTF} from '@react-three/drei'
 
 const Neco = ({animationName = "idle", ...props}) => {
     const group = useRef()
-    const { nodes, materials } = useGLTF('src/Models/NecoArc/Neco.glb')
+    const { nodes, materials } = useGLTF('public/Models/NecoArc/Neco.glb')
 
-    const {animations:idleAnimation}= useFBX("src/Models/NecoArc/Idle.fbx");
+    const {animations:idleAnimation}= useFBX("public/Models/NecoArc/Idle.fbx");
 
     idleAnimation[0].name = "idle";
 
@@ -37,7 +37,7 @@ const Neco = ({animationName = "idle", ...props}) => {
     )
 }
 
-useGLTF.preload('src/Models/NecoArc/Neco.glb')
+useGLTF.preload('public/Models/NecoArc/Neco.glb')
 
 export default Neco;
 
