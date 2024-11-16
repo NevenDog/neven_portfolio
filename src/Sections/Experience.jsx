@@ -19,7 +19,7 @@ const Experience = () => {
                             <directionalLight position={[10,10,10]} intensity={1}/>
                             <OrbitControls enableZoom={false} maxPolarAngle={Math.PI/2}/>
                             <Suspense fallback={<CanvasLoader/>}>
-                                <Neco position-y={-3} scale={2} />
+                                <Neco position-y={-3} scale={2} rotation={[0, -Math.PI/2,0]}/>
                             </Suspense>
                         </Canvas>
                     </div>
