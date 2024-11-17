@@ -47,8 +47,8 @@ const About = () => {
                         <img src="/assets/3D_Dev.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain"/>
 
                         <div>
-                            <p className="grid-headtext">Hi, I'm a dog with dementia</p>
-                            <p className="grid-subtext">I specialize in forgetting things I also do a bit of 3d modeling I guess</p>
+                            <p className="grid-headtext">Blender, Unity and a bit of front end dev</p>
+                            <p className="grid-subtext">That's what I specialize in, always striving for improvement</p>
                         </div>
                     </div>
                 </div>
@@ -68,8 +68,8 @@ const About = () => {
                             />
                         </div>
                         <div>
-                           <p className="grid-headtext">I work remotely cause I don't remember</p>
-                           <p className="grid-subtext">I'm based in Palestine, please get me out</p>
+                           <p className="grid-headtext">I can work anytime</p>
+                           <p className="grid-subtext">I'm based in Italy but I'm available for remote work in any part of the globe</p>
                         </div>
                     </div>
                 </div>
@@ -78,8 +78,8 @@ const About = () => {
                         <img src="/assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain"/>
 
                         <div>
-                            <p className="grid-headtext">Hi, I'm a dog with dementia</p>
-                            <p className="grid-subtext">I forgot I forgot I forgot I forgot I forgot I forgot</p>
+                            <p className="grid-headtext">My passion for 3D Development</p>
+                            <p className="grid-subtext">Passion</p>
                         </div>
                     </div>
                 </div>
