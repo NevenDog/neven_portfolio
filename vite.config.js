@@ -7,15 +7,5 @@ export default defineConfig({
   plugins: [react()],
   build: {
     assetsDir: 'assets',
-    rollupOptions:{
-      output:{
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.names.endsWith(".glb")) {
-            return "Models/[name][extname]"
-          }
-          return "assets/[name]-[hash][extname]"
-        }
-      }
-    }
   }
 })
