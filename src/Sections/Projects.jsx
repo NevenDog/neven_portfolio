@@ -3,7 +3,7 @@ import {myProjects} from "../Constants/index.js";
 import {Canvas} from "@react-three/fiber";
 import {Center, OrbitControls} from "@react-three/drei";
 import CanvasLoader from "../Components/CanvasLoader.jsx";
-import DemoComputer from "../Components/DemoComputer.jsx";
+
 
 const projectCount = myProjects.length;
 
@@ -69,7 +69,7 @@ const Projects = () => {
                         </div>
 
                         <a className="flex items-center gap-2 cursor-pointer text-white-600" href={currentProject.href} target="_blank" rel="noreferrer">
-                            <p>Check Live Site</p>
+                            <p>Check out more pictures!</p>
                             <img src="/assets/arrow-up.png" className="h-3 w-3" alt="arrow" />
                         </a>
                     </div>

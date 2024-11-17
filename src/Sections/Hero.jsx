@@ -32,8 +32,8 @@ const Hero = () => {
     return (
         <section className="min-h-screen w-full flex-col relative" id="home">
             <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 absolute top-1/2 inset-0 -translate-y-1/2 z-20">
-                <p className="sm:text-5xl text-2xl font-medium text-white text-center font-generalsans">Hi, I&#39;m Neven <span className="waving-hand">👋</span></p>
-                <p className="hero_tag text-gray_gradient">Dog with Dementia</p>
+                <p className="sm:text-5xl text-2xl font-medium text-white text-center font-generalsans">Hi, I'm Neven <span className="waving-hand">👋</span></p>
+                <p className="hero_tag text-gray_gradient">ASPIRING 3D DEVELOPER</p>
             </div>
 
             <div className="w-full h-full absolute inset-0">
@@ -54,11 +54,11 @@ const Hero = () => {
 
                                 <Environment preset={"sunset"}/>
                                 <Stars radius={10} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-                                <Target position={[getRandomInt(-5,5),getRandomInt(-5,5),getRandomInt(-5,5)]}/>
-                                <Target position={[getRandomInt(-5,5),getRandomInt(-5,5),getRandomInt(-5,5)]}/>
-                                <Target position={[getRandomInt(-5,5),getRandomInt(-5,5),getRandomInt(-5,5)]}/>
-                                <Target position={[getRandomInt(-5,5),getRandomInt(-5,5),getRandomInt(-5,5)]}/>
-                                <Target position={[getRandomInt(-5,5),getRandomInt(-5,5),getRandomInt(-5,5)]}/>
+                                <Target position={[getRandomInt(-10,10),getRandomInt(-10,10),getRandomInt(-5,5)]}/>
+                                <Target position={[getRandomInt(-10,10),getRandomInt(-10,10),getRandomInt(-5,5)]}/>
+                                <Target position={[getRandomInt(-10,10),getRandomInt(-10,10),getRandomInt(-5,5)]}/>
+                                <Target position={[getRandomInt(-10,10),getRandomInt(-10,10),getRandomInt(-5,5)]}/>
+                                <Target position={[getRandomInt(-10,10),getRandomInt(-10,10),getRandomInt(-5,5)]}/>
                                 {/*<Cube position={sizes.cubePosition}/>*/}
                                 {/*<Rings position={sizes.ringPosition}/>*/}
 
@@ -71,7 +71,7 @@ const Hero = () => {
 
             <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
                 <a href="#about" className="w-fit">
-                    <Button name="Learn more about my dementia" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+                    <Button name="Learn more about me!" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
                 </a>
             </div>
         </section>

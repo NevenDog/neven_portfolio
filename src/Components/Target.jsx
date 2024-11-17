@@ -23,21 +23,21 @@ const Target = (props) => {
             x: targetRef.current.position.x + getRandomInt(-20,20),
             z: targetRef.current.position.z + getRandomInt(-20,20),
             ease: "power1.inOut",
-            duration: 5,
+            duration: 6,
         })
         tl.to(targetRef.current.position, {
             y: targetRef.current.position.y,
             x: targetRef.current.position.x,
             z:targetRef.current.position.z,
             ease: "power1.inOut",
-            duration:5,
+            duration:6,
         })
     });
 
 
 
     return (
-        <Float floatIntensity={2}>
+        <Float floatIntensity={2} rotationIntensity={1} floatingRange={[-1,1]} speed={0.5}>
         <mesh {...props} ref={targetRef} rotation={[0, getRandomInt(1,2), 0]} scale={0.1}>
             <primitive object={scene}/>
         </mesh>

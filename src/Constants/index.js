@@ -54,10 +54,10 @@ export const navLinks = [
 export const myProjects = [
     {
         title: 'Isometric-Room',
-        desc: 'IDK Man this is literally my room but in Blender',
+        desc: 'Isometric Room Study/My irl room',
         subdesc:
-            'Made with love :3',
-        href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+            'A detailed 3D visualization of my bedroom-office space, combining clean design with personal touches. Modeled and rendered in Blender, featuring precise architectural details and realistic lighting to capture the essence of a contemporary gaming setup.',
+        href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         texture: '/textures/project/project1.mp4',
         logo: '/assets/Blender_Logo.png',
         logoStyle: {
@@ -93,11 +93,11 @@ export const myProjects = [
         ],
     },
     {
-        title: 'This Portfolio Website',
-        desc: "idk man, it's literally what you're looking at",
+        title: 'Portfolio Website',
+        desc: "It's what you're looking at right now",
         subdesc:
-            'tell me what you think :)',
-        href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+            'As a 3D developer, I\'ve crafted this portfolio using Vite, React, and Three.js to bring my creative vision to life. The portfolio features interactive experiences alongside animated and static 3D elements to showcase my passion for both the technical and creative aspects of 3D development.',
+        href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         texture: '/textures/project/project2.mp4',
         logo: '/assets/project-logo2.png',
         logoStyle: {
@@ -134,8 +134,8 @@ export const myProjects = [
         title: 'Grog-Cold Ones AD',
         desc: 'A sample AD made for the Cold Ones Podcast and YT channel',
         subdesc:
-            'While making this portfolio and a lot of the 3d models I was listening to their yt videos in the background so I thought "why not make them a couple rendered ads :)"',
-        href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+            'While coding this portfolio and modeling the 3D models you see here I was listening to their yt videos in the background so I thought "why not make them a couple rendered ads"',
+        href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         texture: '/textures/project/project3.mp4',
         logo: '/assets/Blender_Logo.png',
         logoStyle: {
@@ -174,10 +174,10 @@ export const myProjects = [
     },
     {
         title: 'GOTI - Get Ovr The Invasion',
-        desc: 'An AR experience that I developed with a friend during my internship at OVR',
+        desc: 'AR FPS experience',
         subdesc:
-            "Built with OVR's propietary sdk in Unity, models made in Blender",
-        href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+            "A project that I developed with a friend during my internship at OVR the Reality. This AR experience has you shoot down robot invaders coming towards you, it features two weapons, a revolver and an assault rifle. Built with OVR's proprietary sdk in Unity, models made in Blender",
+        href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         texture: '/textures/project/project4.mp4',
         logo: '/assets/GOTI.png',
         logoStyle: {
@@ -198,14 +198,31 @@ export const myProjects = [
                 path: '/assets/Blender_Logo.png',
             },
         ],
-        image: [],
+        image: [
+            {
+                id: 1,
+                path:"/assets/goti/goti_1.jpg"
+            },
+            {
+                id: 2,
+                path:"/assets/goti/goti_2.jpg"
+            },
+            {
+                id: 3,
+                path:"/assets/goti/goti_3.jpg"
+            },
+            {
+                id: 4,
+                path:"/assets/goti/goti_4.jpg"
+            },
+        ],
     },
     {
         title: 'Nikka Whisky',
-        desc: 'Comercial Render for Nikka Whisky',
+        desc: 'Render for an AD',
         subdesc:
-            'I saw a funny meme about Ni**a whisky and wanted to make it :)',
-        href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+            'A clean, minimalist 3D render showcasing a Nikka Whisky bottle against a soft white backdrop. This piece reflects my approach to 3D modeling: combining technical precision with artistic composition to create photorealistic product visualizations.',
+        href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         texture: '/textures/project/project5.mp4',
         logo: '/assets/Blender_Logo.png',
         logoStyle: {
@@ -221,7 +238,28 @@ export const myProjects = [
                 path: '/assets/Blender_Logo.png',
             },
         ],
-        image:[],
+        image:[
+            {
+                id:1,
+                path:"/assets/nikka/nikka_1.png"
+            },
+            {
+                id:2,
+                path:"/assets/nikka/nikka_2.png"
+            },
+            {
+                id:3,
+                path:"/assets/nikka/nikka_3.png"
+            },
+            {
+                id:4,
+                path:"/assets/nikka/nikka_4.png"
+            },
+            {
+                id:5,
+                path:"/assets/nikka/nikka_5.png"
+            },
+        ],
     },
 ];
 

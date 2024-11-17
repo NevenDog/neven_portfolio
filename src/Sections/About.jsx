@@ -37,7 +37,9 @@ const About = () => {
                         {/*<img src="/assets/funny%20painting.jpg" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain"/>*/}
                         <div>
                             <p className="grid-headtext">Hi, I'm Neven</p>
-                            <p className="grid-subtext">I'm an aspiring 3D Developer, this is my portfolio</p>
+                            <p className="grid-subtext">Welcome to my portfolio, here you can find more info about
+                                myself. If you're looking for my works just scroll a bit down below.</p>
+                            <p className="grid-subtext">Also, try clicking my face :)</p>
                         </div>
                     </div>
                 </div>
@@ -68,8 +70,8 @@ const About = () => {
                             />
                         </div>
                         <div>
-                           <p className="grid-headtext">I can work anytime</p>
-                           <p className="grid-subtext">I'm based in Italy but I'm available for remote work in any part of the globe</p>
+                           <p className="grid-headtext">Open for work anytime</p>
+                           <p className="grid-subtext">I'm based in Italy but I'm available for remote work in any part of the globe, or even non remote, I would love to travel around.</p>
                         </div>
                     </div>
                 </div>
@@ -79,18 +81,18 @@ const About = () => {
 
                         <div>
                             <p className="grid-headtext">My passion for 3D Development</p>
-                            <p className="grid-subtext">Passion</p>
+                            <p className="grid-subtext">Aspiring 3D Developer specializing in interactive experiences and digital content creation. With expertise in Blender, Unity, and front-end development, I bridge the gap between 3D artistry and technical implementation to create engaging digital solutions. Whether it's crafting detailed 3D assets, developing interactive applications, or building web-based experiences, I bring ideas to life across the full development pipeline.</p>
                         </div>
                     </div>
                 </div>
                 <div className="xl:col-span-1 xl:row-span-2">
                     <div className="grid-container">
-                        <img src="/assets/Peak%20learning%20.png" alt="grid-4" className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object.top"/>
+                        <img src="/assets/neco_mail.png" alt="grid-4" className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object.top"/>
                         <div className="space-y-2">
                             <p className="grid-subtext text-center">Contact me</p>
                             <div className="copy-container" onClick={handleCopy}>
                                 <img src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"} alt="copy"/>
-                                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">DOG!</p>
+                                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">Copy my e-mail!</p>
                             </div>
                         </div>
                     </div>
