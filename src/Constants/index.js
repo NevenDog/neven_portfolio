@@ -255,10 +255,6 @@ export const myProjects = [
                 id:4,
                 path:"/assets/nikka/nikka_4.png"
             },
-            {
-                id:5,
-                path:"/assets/nikka/nikka_5.png"
-            },
         ],
     },
 ];
