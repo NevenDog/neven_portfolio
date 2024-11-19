@@ -4,6 +4,8 @@ import About from "./Sections/About.jsx";
 import Projects from "./Sections/Projects.jsx";
 import Footer from "./Sections/Footer.jsx";
 import Experience from "./Sections/Experience.jsx";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const App = () =>{
     return (
@@ -17,6 +19,8 @@ const App = () =>{
                 <Projects />
                 <Experience />
                 <Footer />
+                <Analytics />
+                <SpeedInsights />
             </div>
         </main>
     )
