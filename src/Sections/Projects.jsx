@@ -1,9 +1,5 @@
 import React, {Suspense, useState} from 'react';
 import {myProjects} from "../Constants/index.js";
-import {Canvas} from "@react-three/fiber";
-import {Center, OrbitControls} from "@react-three/drei";
-import CanvasLoader from "../Components/CanvasLoader.jsx";
-
 
 const projectCount = myProjects.length;
 

@@ -17,7 +17,7 @@ const Footer = () => {
                 <a href="https://github.com/NevenDog" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2"/>
                 </a>
-                <a href="https://www.behance.net/sirhuntercimo" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <a href="https://www.behance.net/nevendev" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <img src="/assets/behance.svg" alt="behance" className="w-1/2 h-1/2"/>
                 </a>
                 <a href="https://www.instagram.com/tato.vering/" target="_blank" rel="noopener noreferrer" className="social-icon">
