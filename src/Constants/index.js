@@ -22,7 +22,7 @@ export const myProjects = [
         desc: 'Isometric Room Study/My irl room',
         subdesc:
             'A detailed 3D visualization of my bedroom-office space, combining clean design with personal touches. Modeled and rendered in Blender, featuring precise architectural details and realistic lighting to capture the essence of a contemporary gaming setup.',
-        href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        href: 'https://www.behance.net/gallery/213109981/Isometric-Office-Bedroom',
         texture: '/textures/project/project1.mp4',
         logo: '/assets/Blender_Logo.png',
         logoStyle: {
@@ -187,7 +187,7 @@ export const myProjects = [
         desc: 'Render for an AD',
         subdesc:
             'A clean, minimalist 3D render showcasing a Nikka Whisky bottle against a soft white backdrop. This piece reflects my approach to 3D modeling: combining technical precision with artistic composition to create photorealistic product visualizations.',
-        href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        href: 'https://www.behance.net/gallery/213126597/Nikka-Whisky-from-the-Barrel',
         texture: '/textures/project/project5.mp4',
         logo: '/assets/Blender_Logo.png',
         logoStyle: {
