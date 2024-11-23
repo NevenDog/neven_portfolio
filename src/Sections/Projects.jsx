@@ -1,39 +1,73 @@
-import React, {Suspense, useState} from 'react';
-import {myProjects} from "../Constants/index.js";
+import React, { Suspense, useState } from 'react';
+import { myProjects } from "../Constants/index.js";
 
 const projectCount = myProjects.length;
 
 const Projects = () => {
-    const [selectedProjectIndex, setSelectedProjectIndex] = useState(0)
+    const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+    const [selectedProjectImageIndex, setSelectedProjectImageIndex] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(false);
 
-    const [selectedProjectImageIndex, setSelectedProjectImageIndex] = useState(0)
-    
     const currentProject = myProjects[selectedProjectIndex];
-
-    const imageCount = currentProject.image.length ? currentProject.image.length : 0;
-
-    const currentImage = currentProject.image[selectedProjectImageIndex];
+    const mediaCount = currentProject.media?.length || 0;
+    const currentMedia = currentProject.media?.[selectedProjectImageIndex];
 
     const handleNavigation = (direction) => {
         setSelectedProjectImageIndex(0);
+        setIsPlaying(false);
         setSelectedProjectIndex((prevIndex) => {
             if(direction === "previous"){
-                return prevIndex === 0 ? projectCount -1 : prevIndex -1;
+                return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
             } else {
-                return prevIndex === projectCount -1 ? 0 : prevIndex + 1;
+                return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
             }
-        })
-    }
+        });
+    };
 
-    const handleImageNav = (direction) => {
+    const handleMediaNav = (direction) => {
+        setIsPlaying(false);
         setSelectedProjectImageIndex((prevIndex) => {
             if(direction === "previous"){
-                return prevIndex === 0 ? imageCount -1 : prevIndex -1;
+                return prevIndex === 0 ? mediaCount - 1 : prevIndex - 1;
             } else {
-                return prevIndex === imageCount -1 ? 0 : prevIndex + 1;
+                return prevIndex === mediaCount - 1 ? 0 : prevIndex + 1;
             }
-        })
-    }
+        });
+    };
+
+    const renderMedia = () => {
+        if (!currentMedia) {
+            return <img
+                className="absolute object-contain h-full w-full"
+                src="/assets/Failsafe.jpg"
+                alt="fallback"
+            />;
+        }
+
+        if (currentMedia.type === 'video') {
+            return (
+                <video
+                    className="absolute object-contain h-full w-full"
+                    src={currentMedia.path}
+                    controls={true}
+                    playing={isPlaying}
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                    onEnded={() => setIsPlaying(false)}
+                >
+                    Your browser does not support the video tag.
+                </video>
+            );
+        }
+
+        return (
+            <img
+                className="absolute object-contain h-full w-full"
+                src={currentMedia.path}
+                alt={currentProject.title}
+            />
+        );
+    };
 
     return (
         <section className="c-space py-20" id="work">
@@ -61,11 +95,16 @@ const Projects = () => {
                                 <div key={index} className="tech-logo">
                                     <img src={tag.path} alt={tag.name}/>
                                 </div>
-                                ))}
+                            ))}
                         </div>
 
-                        <a className="flex items-center gap-2 cursor-pointer text-white-600" href={currentProject.href} target="_blank" rel="noreferrer">
-                            <p>Check out more pictures!</p>
+                        <a
+                            className="flex items-center gap-2 cursor-pointer text-white-600"
+                            href={currentProject.href}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <p>Check out more!</p>
                             <img src="/assets/arrow-up.png" className="h-3 w-3" alt="arrow" />
                         </a>
                     </div>
@@ -81,20 +120,28 @@ const Projects = () => {
                 </div>
 
                 <div className="relative lg:col-span-2 border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-                    <img className="absolute object-contain h-full w-full" src={currentImage ? currentImage.path : "/assets/Failsafe.jpg"} alt={currentProject.title}/>
+                    {renderMedia()}
 
-                    <div className="absolute w-full flex justify-between items-center bottom-0 p-4">
-                        <button className="arrow-btn" onClick={() => handleImageNav("previous")}>
+                    <div className="absolute w-full flex justify-between items-center bottom-40 p-4">
+                        <button
+                            className="arrow-btn"
+                            onClick={() => handleMediaNav("previous")}
+                            disabled={isPlaying}
+                        >
                             <img src="/assets/left-arrow.png" alt="left arrow" className="w-4 h-4"/>
                         </button>
-                        <button className="arrow-btn" onClick={() => handleImageNav("next")}>
+                        <button
+                            className="arrow-btn"
+                            onClick={() => handleMediaNav("next")}
+                            disabled={isPlaying}
+                        >
                             <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4"/>
                         </button>
                     </div>
-
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
+
 export default Projects;

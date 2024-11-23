@@ -38,21 +38,25 @@ export const myProjects = [
                 path: '/assets/Blender_Logo.png',
             }
         ],
-        image: [
+        media: [
             {
                 id:1,
+                type: "image",
                 path:"/assets/IsoRoom/Photo_1.png",
             },
             {
                 id:2,
+                type: "image",
                 path:"/assets/IsoRoom/Photo_2.png",
             },
             {
                 id:3,
+                type: "image",
                 path:"/assets/IsoRoom/Photo_3.png",
             },
             {
                 id:4,
+                type: "image",
                 path:"/assets/IsoRoom/Photo_4.png",
             },
         ],
@@ -88,9 +92,10 @@ export const myProjects = [
                 path: '/assets/three_js_logo.png',
             },
         ],
-        image: [
+        media: [
             {
                 id: 1,
+                type: "image",
                 path:"/assets/Portfolio/Portfolio_1.png"
             }
         ],
@@ -118,22 +123,26 @@ export const myProjects = [
                 path: '/assets/Blender_Logo.png',
             }
         ],
-        image:[
+        media:[
             {
                 id:1,
-                path:"/assets/Grog/0001.png",
+                type: "image",
+                path:"/assets/Grog/grog_1.png",
             },
             {
                 id:2,
-                path:"/assets/Grog/0024.png",
+                type: "image",
+                path:"/assets/Grog/grog_3.png",
             },
             {
                 id:3,
-                path:"/assets/Grog/0059.png",
+                type: "image",
+                path:"/assets/Grog/grog_4.png",
             },
             {
                 id:4,
-                path:"/assets/Grog/0087.png",
+                type:"video",
+                path:"/assets/Grog/grog.mp4",
             },
         ]
     },
@@ -163,21 +172,25 @@ export const myProjects = [
                 path: '/assets/Blender_Logo.png',
             },
         ],
-        image: [
+        media: [
             {
                 id: 1,
+                type: "image",
                 path:"/assets/goti/goti_1.jpg"
             },
             {
                 id: 2,
+                type: "image",
                 path:"/assets/goti/goti_2.jpg"
             },
             {
                 id: 3,
+                type: "image",
                 path:"/assets/goti/goti_3.jpg"
             },
             {
                 id: 4,
+                type: "image",
                 path:"/assets/goti/goti_4.jpg"
             },
         ],
@@ -203,21 +216,25 @@ export const myProjects = [
                 path: '/assets/Blender_Logo.png',
             },
         ],
-        image:[
+        media:[
             {
                 id:1,
+                type: "image",
                 path:"/assets/nikka/nikka_1.png"
             },
             {
                 id:2,
+                type: "image",
                 path:"/assets/nikka/nikka_2.png"
             },
             {
                 id:3,
+                type: "image",
                 path:"/assets/nikka/nikka_3.png"
             },
             {
                 id:4,
+                type: "image",
                 path:"/assets/nikka/nikka_4.png"
             },
         ],
