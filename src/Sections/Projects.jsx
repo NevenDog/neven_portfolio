@@ -11,7 +11,7 @@ const LazyCarouselImage = memo(({ src, alt, className }) => {
             src={src}
             alt={alt}
             className={className}
-            loading="lazy"
+            loading="eager"
         />
     );
 });
@@ -33,7 +33,7 @@ const LazyCarouselVideo = memo(({ src, className, controls, onPlay, onPause, onE
             onPlay={onPlay}
             onPause={onPause}
             onEnded={onEnded}
-            preload="none"
+            preload="auto"
         >
             Your browser does not support the video tag.
         </video>
