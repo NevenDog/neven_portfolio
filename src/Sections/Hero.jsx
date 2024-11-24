@@ -7,6 +7,7 @@ import {useMediaQuery} from "react-responsive";
 import {calculateSizes} from "../Constants/index.js";
 import Target from "../Components/Target.jsx";
 import Button from "../Components/Button.jsx";
+import AnimatedName from "../Components/AnimatedName.jsx";
 
 const Hero = () => {
     // const controls = useControls("Room", {
@@ -32,7 +33,7 @@ const Hero = () => {
     return (
         <section className="min-h-screen w-full flex-col relative" id="home">
             <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 absolute top-1/2 inset-0 -translate-y-1/2 z-20">
-                <p className="sm:text-5xl text-2xl font-medium text-white text-center font-generalsans">Hi, I'm Neven <span className="waving-hand">👋</span></p>
+                <p className="sm:text-5xl text-2xl font-medium text-white text-center font-generalsans">Hi, I'm <AnimatedName /> <span className="waving-hand">👋</span></p>
                 <p className="hero_tag text-gray_gradient">ASPIRING 3D DEVELOPER</p>
             </div>
 

@@ -36,7 +36,7 @@ const About = () => {
                         </div>
                         {/*<img src="/assets/funny%20painting.jpg" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain"/>*/}
                         <div>
-                            <p className="grid-headtext">Hi, I'm Neven</p>
+                            <p className="grid-headtext">Hi, I'm Mattia &#34;Neven&#34; Cimolino</p>
                             <p className="grid-subtext">Welcome to my portfolio, here you can find more info about
                                 myself. If you're looking for my works just scroll a bit down below.</p>
                             <p className="grid-subtext">Also, try clicking my face :)</p>
