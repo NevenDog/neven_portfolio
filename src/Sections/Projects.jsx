@@ -1,6 +1,7 @@
 import React, { Suspense, useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import { myProjects } from "../Constants/index.js";
+import {Image} from "react-img-placeholder";
 
 const projectCount = myProjects.length;
 
@@ -189,7 +190,41 @@ const Projects = () => {
                 </div>
 
                 <div className="relative lg:col-span-2 border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-                    {renderCarouselMedia()}
+
+                    {/*<Suspense fallback={<CarouselLoadingPlaceholder />}>*/}
+                    {/*<LazyCarouselImage*/}
+                    {/*    src="/assets/Failsafe.jpg"*/}
+                    {/*    alt="fallback"*/}
+                    {/*    className="absolute object-contain h-full w-full"*/}
+                    {/*/>*/}
+                    {/*</Suspense>*/}
+
+                    {currentMedia.type === "video" ? (
+                        <Suspense fallback={<CarouselLoadingPlaceholder />}>
+                            <LazyCarouselVideo
+                                src={currentMedia.path}
+                                className="absolute object-contain h-full w-full"
+                                controls={true}
+                                onPlay={() => setIsPlaying(true)}
+                                onPause={() => setIsPlaying(false)}
+                                onEnded={() => setIsPlaying(false)}
+                            />
+                        </Suspense>
+                    ) : (
+                        <Image className="absolute object-contain h-full w-full" width={500} height={500} src={currentMedia.path} alt={currentProject.title} placeholder={<CarouselLoadingPlaceholder />} />
+                        // <Suspense fallback={<CarouselLoadingPlaceholder />}>
+                        //     <LazyCarouselImage
+                        //         src={currentMedia.path}
+                        //         alt={currentProject.title}
+                        //         className="absolute object-contain h-full w-full"
+                        //     />
+                        // </Suspense>
+                    ) }
+
+
+
+
+
 
                     <div className="absolute w-full flex justify-between items-center bottom-40 p-4">
                         <button
