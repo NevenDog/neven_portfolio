@@ -1,7 +1,63 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState, memo } from 'react';
+import PropTypes from 'prop-types';
 import { myProjects } from "../Constants/index.js";
 
 const projectCount = myProjects.length;
+
+// Memoized carousel image component with prop types
+const LazyCarouselImage = memo(({ src, alt, className }) => {
+    return (
+        <img
+            src={src}
+            alt={alt}
+            className={className}
+            loading="lazy"
+        />
+    );
+});
+
+LazyCarouselImage.displayName = 'LazyCarouselImage';
+LazyCarouselImage.propTypes = {
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+    className: PropTypes.string
+};
+
+// Memoized carousel video component with prop types
+const LazyCarouselVideo = memo(({ src, className, controls, onPlay, onPause, onEnded }) => {
+    return (
+        <video
+            src={src}
+            className={className}
+            controls={controls}
+            onPlay={onPlay}
+            onPause={onPause}
+            onEnded={onEnded}
+            preload="none"
+        >
+            Your browser does not support the video tag.
+        </video>
+    );
+});
+
+LazyCarouselVideo.displayName = 'LazyCarouselVideo';
+LazyCarouselVideo.propTypes = {
+    src: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    controls: PropTypes.bool,
+    onPlay: PropTypes.func,
+    onPause: PropTypes.func,
+    onEnded: PropTypes.func
+};
+
+// Loading placeholder component with display name
+const CarouselLoadingPlaceholder = () => (
+    <div className="absolute inset-0 flex items-center justify-center bg-black-200">
+        <div className="animate-pulse w-12 h-12 rounded-full border-4 border-white border-t-transparent"/>
+    </div>
+);
+
+CarouselLoadingPlaceholder.displayName = 'CarouselLoadingPlaceholder';
 
 const Projects = () => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
@@ -35,37 +91,42 @@ const Projects = () => {
         });
     };
 
-    const renderMedia = () => {
+    const renderCarouselMedia = () => {
         if (!currentMedia) {
-            return <img
-                className="absolute object-contain h-full w-full"
-                src="/assets/Failsafe.jpg"
-                alt="fallback"
-            />;
+            return (
+                <Suspense fallback={<CarouselLoadingPlaceholder />}>
+                    <LazyCarouselImage
+                        src="/assets/Failsafe.jpg"
+                        alt="fallback"
+                        className="absolute object-contain h-full w-full"
+                    />
+                </Suspense>
+            );
         }
 
         if (currentMedia.type === 'video') {
             return (
-                <video
-                    className="absolute object-contain h-full w-full"
-                    src={currentMedia.path}
-                    controls={true}
-                    playing={isPlaying}
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
-                    onEnded={() => setIsPlaying(false)}
-                >
-                    Your browser does not support the video tag.
-                </video>
+                <Suspense fallback={<CarouselLoadingPlaceholder />}>
+                    <LazyCarouselVideo
+                        src={currentMedia.path}
+                        className="absolute object-contain h-full w-full"
+                        controls={true}
+                        onPlay={() => setIsPlaying(true)}
+                        onPause={() => setIsPlaying(false)}
+                        onEnded={() => setIsPlaying(false)}
+                    />
+                </Suspense>
             );
         }
 
         return (
-            <img
-                className="absolute object-contain h-full w-full"
-                src={currentMedia.path}
-                alt={currentProject.title}
-            />
+            <Suspense fallback={<CarouselLoadingPlaceholder />}>
+                <LazyCarouselImage
+                    src={currentMedia.path}
+                    alt={currentProject.title}
+                    className="absolute object-contain h-full w-full"
+                />
+            </Suspense>
         );
     };
 
@@ -76,11 +137,19 @@ const Projects = () => {
             <div className="grid lg:grid-cols-3 grid-cols-1 mt-12 gap-5 w-full">
                 <div className="lg:col-span-1 flex flex-col gap-5 relative sm:10 py-10 px-5 shadow-2xl shadow-black-200">
                     <div className="absolute top-0 right-0">
-                        <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
+                        <img
+                            src={currentProject.spotlight}
+                            alt="spotlight"
+                            className="w-full h-96 object-cover rounded-xl"
+                        />
                     </div>
 
                     <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
-                        <img src={currentProject.logo} alt="logo" className="w-10 h-10 shadow-sm" />
+                        <img
+                            src={currentProject.logo}
+                            alt="logo"
+                            className="w-10 h-10 shadow-sm"
+                        />
                     </div>
 
                     <div className="flex flex-col gap-5 text-white-600 my-5">
@@ -120,7 +189,7 @@ const Projects = () => {
                 </div>
 
                 <div className="relative lg:col-span-2 border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-                    {renderMedia()}
+                    {renderCarouselMedia()}
 
                     <div className="absolute w-full flex justify-between items-center bottom-40 p-4">
                         <button
@@ -143,5 +212,7 @@ const Projects = () => {
         </section>
     );
 };
+
+Projects.displayName = 'Projects';
 
 export default Projects;
