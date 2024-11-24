@@ -54,7 +54,7 @@ LazyCarouselVideo.propTypes = {
 // Loading placeholder component with display name
 const CarouselLoadingPlaceholder = () => (
     <div className="absolute inset-0 flex items-center justify-center bg-black-200">
-        <div className="animate-pulse w-12 h-12 rounded-full border-4 border-white border-t-transparent"/>
+        <div className="animate-spin w-12 h-12 rounded-full border-4 border-white border-t-transparent"/>
     </div>
 );
 
@@ -90,45 +90,6 @@ const Projects = () => {
                 return prevIndex === mediaCount - 1 ? 0 : prevIndex + 1;
             }
         });
-    };
-
-    const renderCarouselMedia = () => {
-        if (!currentMedia) {
-            return (
-                <Suspense fallback={<CarouselLoadingPlaceholder />}>
-                    <LazyCarouselImage
-                        src="/assets/Failsafe.jpg"
-                        alt="fallback"
-                        className="absolute object-contain h-full w-full"
-                    />
-                </Suspense>
-            );
-        }
-
-        if (currentMedia.type === 'video') {
-            return (
-                <Suspense fallback={<CarouselLoadingPlaceholder />}>
-                    <LazyCarouselVideo
-                        src={currentMedia.path}
-                        className="absolute object-contain h-full w-full"
-                        controls={true}
-                        onPlay={() => setIsPlaying(true)}
-                        onPause={() => setIsPlaying(false)}
-                        onEnded={() => setIsPlaying(false)}
-                    />
-                </Suspense>
-            );
-        }
-
-        return (
-            <Suspense fallback={<CarouselLoadingPlaceholder />}>
-                <LazyCarouselImage
-                    src={currentMedia.path}
-                    alt={currentProject.title}
-                    className="absolute object-contain h-full w-full"
-                />
-            </Suspense>
-        );
     };
 
     return (
@@ -210,7 +171,7 @@ const Projects = () => {
                                 onEnded={() => setIsPlaying(false)}
                             />
                         </Suspense>
-                    ) : (
+                    ) : currentMedia.path ? (
                         <Image className="absolute object-contain h-full w-full" width={500} height={500} src={currentMedia.path} alt={currentProject.title} placeholder={<CarouselLoadingPlaceholder />} />
                         // <Suspense fallback={<CarouselLoadingPlaceholder />}>
                         //     <LazyCarouselImage
@@ -219,12 +180,9 @@ const Projects = () => {
                         //         className="absolute object-contain h-full w-full"
                         //     />
                         // </Suspense>
+                    ) : (
+                        <Image className="absolute object-contain h-full w-full" width={500} height={500} src={"public/assets/Failsafe.jpg"} alt={"Error xd"} placeholder={<CarouselLoadingPlaceholder />} />
                     ) }
-
-
-
-
-
 
                     <div className="absolute w-full flex justify-between items-center bottom-40 p-4">
                         <button
